@@ -33,3 +33,17 @@ if [ "$1" == "--logs" ]; then
     done
     echo "Utworzono $num_files plików z logami."
 fi
+
+
+show_help() {
+    echo "Użycie: ./skrypt.sh [OPCJA]"
+    echo "OPCJE:"
+    echo "  --date       Wyświetla aktualną datę."
+    echo "  --logs [N]   Tworzy pliki z logami, gdzie N to liczba plików do utworzenia."
+    echo "               Jeśli N nie zostanie podane, utworzy 100 plików z logami."
+}
+
+if [ "$1" == "--help" ]; then
+    show_help
+    exit 0
+fi
